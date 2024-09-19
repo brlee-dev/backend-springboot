@@ -1,6 +1,11 @@
 package com.brlee.posts.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "users")
@@ -13,7 +18,7 @@ public class User {
     @Column(nullable = false, unique = true, length = 10)
     private String username;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 60) // 길이 60자로 변경
     private String password;
 
     // Getters and Setters
